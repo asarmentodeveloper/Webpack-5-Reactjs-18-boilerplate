@@ -1,0 +1,232 @@
+/* ==== Document ========================================================================== */
+
+/* 1- Makes the box model more intuitive */
+/* 2- Ensure every element will have the same line height to improve vertical rhythm */
+/* 3- Ensure every element will have the same default font family */
+*,
+*::before,
+*::after {
+    box-sizing: inherit; /* 1 */
+    line-height: inherit; /* 2 */
+    font-family: inherit;
+    color: inherit
+}
+
+/* 1- Makes font-size more consistent after orientation changes on mobile Safari */
+/* 2- Makes the line hight more consistent in all browsers */
+/* 3- Define main font family */
+/* 4- Define default font size, not needed if working with px */
+html {
+    -webkit-text-size-adjust: 100%; /* 1 */
+    line-height: var(--body-line-height); /* 2 */
+    font-family: var(--body-font); /* 3 */
+    font-size: var(--base-unit); /* 4 */
+}
+
+/* ==== Sections ========================================================================== */
+
+/* 1- removes default margin */
+/* 3- Defines main font family or relative font-size*/
+/* 3- ensure body height minimum height is the browser height */
+body {
+    margin: 0; /* 1 */
+    font-size: var(--body-font-size); /* 2 */
+    min-height: 100vh; /* 3 */
+    color: var(--primary-color-dark);
+    box-sizing: border-box;
+    padding-top: 8rem;
+}
+
+/* 1- Render the `main` element consistently in IE. */
+main {
+    display: block; /* 1 */
+}
+
+/* 1- remove browser default margins */
+h1,
+h2,
+h3 {
+    font-family: var(--heading-font);
+    color: var(--primary-color-xdark);
+    margin-block-end: 0; /* 1 */
+    line-height: var(--heading-line-height-3);
+    margin: var(--heading-font-spacing-small);
+    font-weight: var(--font-weight-bold);
+}
+
+h1,
+h2,
+h3 {
+    margin: var(--heading-font-spacing-large);
+}
+
+h1 {
+    font-size: var(--h1-font-size);
+    line-height: var(--heading-line-height-1);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    line-height: var(--heading-line-height-2);
+}
+
+h3 {
+    font-size: var(--h3-font-size);
+}
+
+/* ==== Text content ========================================================================== */
+p,
+ul {
+    margin: var(--body-font-spacing);
+    list-style: none;
+    padding: 0;
+}
+
+/* 1- improves vertical rythem in firefox */
+/* 2 make horizontal rythem more consistent */
+li {
+    display: block; /* 1 */
+    margin: 0 0 0 var(--spacing-medium); /* 2 */
+}
+
+li::before {
+    line-height: 1;
+}
+
+/* improves vertical rythem in firefox */
+ul li::before {
+    content: "";
+    width: var(--spacing-xxsmall);
+    height: var(--spacing-xxsmall);
+    clip-path: circle(50% at 50% 50%);
+    background-color: var(--secondary-color);
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 var(--spacing-xxsmall) 0 0;
+}
+
+li ul {
+    margin-bottom: 0;
+}
+
+/* ==== Inline text semantics ====================================================================== */
+
+small {
+    font-size: var(--small-font-size);
+}
+
+a {
+    text-decoration-skip-ink: auto;
+    color: var(--secondary-color);
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+/* 1- Correct the inheritance and scaling of font size in all browsers. */
+/* 2- Correct the odd `em` font sizing in all browsers. */
+/* 3- Correct line height to insure vertical rythem. */
+code,
+kbd,
+samp {
+    font-family: var(--body-font-secondary); /* 1 */
+    font-size: var(--body-font-size); /* 2 */
+    line-height: 1; /* 3 */
+}
+
+/* 1- Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari. */
+abbr[title] {
+    text-decoration: underline dotted; /* 1 */
+}
+
+var {
+    font-weight: var(--font-weight-bold);
+}
+
+/* 1- ensure the text will visually look bold */
+b,
+strong {
+    font-weight: var(--font-weight-bolder); /* 1 */
+}
+
+/* Prevent `sub` and `sup` elements from affecting the line height in all browsers. */
+
+sub,
+sup {
+    font-size: var(--small-font-size);
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sub {
+    bottom: -0.25rem;
+}
+
+sup {
+    top: -0.5rem;
+}
+
+mark {
+    background-color: var(--color-highlight);
+    color: var(--primary-color-xdark);
+}
+
+::-moz-selection {
+    background: var(--color-highlight);
+}
+
+::selection {
+    background: var(--color-highlight);
+}
+
+/* === Image and multimedia  ========================================================================== */
+
+/* 1- Remove the border on images inside links in IE 10. */
+img {
+    border-style: none; /* 1 */
+}
+
+/* 1- make images more manageble. */
+svg {
+    max-height: 100%; /* 1 */
+    display: block; /* 1 */
+}
+
+/* === Forms ========================================================================== */
+
+/* 1- Remove the inheritance of text transform in Edge, Firefox, and IE. */
+/* 1- Change the font styles in all browsers. */
+/* 2- Remove the margin in Firefox and Safari. */
+:global(.button),
+button {
+    text-transform: none; /* 1 */
+    font-family: inherit; /* 2 */
+    font-size: var(--body-font-size); /* 3 */
+    background-color: var(--secondary-color);
+    transition: background-color var(--animation-length) ease;
+    border: none;
+    cursor: pointer;
+    color: var(--primary-color-xlight);
+    padding: var(--spacing-xxsmall) var(--spacing-small);
+    border-radius: var(--border-radius-size);
+    margin: 0 var(--spacing-xxsmall) var(--spacing-xsmall);
+}
+
+:global(.button:focus),
+button:focus {
+    outline: var(--border-size-medium) dotted var(--primary-color);
+    outline-offset: .2rem;
+    border-color: var(--secondary-color)
+}
+
+:global(.button:hover),
+button:hover {
+    background-color: var(--secondary-color-dark);
+}
+
+:global(.button:active),
+button:active {
+    background-color: var(--secondary-color-xdark);
+}

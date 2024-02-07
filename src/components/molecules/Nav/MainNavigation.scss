@@ -1,0 +1,20 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-white);
+}
+
+.link {
+  padding: var(--spacing-smedium) var(--spacing-smedium);
+  margin: 0 var(--spacing-small);
+  display: block;
+  border-bottom: var(--border-size-large) solid transparent;
+  text-decoration: none;
+
+
+  &-active {
+    text-decoration: none;
+    text-decoration: underline;
+    border-bottom: var(--border-size-large) solid var(--secondary-color);
+  }
+}

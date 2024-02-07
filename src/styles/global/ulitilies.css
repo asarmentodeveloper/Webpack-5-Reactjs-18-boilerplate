@@ -1,0 +1,9 @@
+:global(.u-border-bottom) {
+    border-bottom: var(--border-size-small) solid  var(--primary-color-light) !important;
+}
+
+:global(.u-box-centralize-elem) {
+    padding: var(--spacing-large);
+    display: flex;
+    justify-content: center;
+}

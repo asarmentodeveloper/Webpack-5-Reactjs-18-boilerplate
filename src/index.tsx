@@ -1,11 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-import {
-  BrowserRouter,
-  RouterProvider,
-  createBrowserRouter,
-} from "react-router-dom";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import "./styles/index.css";
 import { About, LandingPageCampaing, NotFound, Root } from "./components/pages";
 
